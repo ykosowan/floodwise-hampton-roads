@@ -57,11 +57,13 @@ function Home() {
                 <Link
                   to="/assess"
                   search={{ issue: s.issue }}
-                  className="card-surface group flex h-full min-h-32 flex-col justify-between gap-4 p-4 transition-colors hover:border-primary"
+                  className="card-surface group flex h-full min-h-36 flex-col justify-between gap-4 p-4 transition-colors hover:border-primary"
                 >
-                  <svg viewBox="0 0 24 24" className="h-8 w-8 stroke-primary" fill="none" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d={s.icon} />
-                  </svg>
+                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary transition-colors group-hover:bg-primary/15">
+                    <svg viewBox="0 0 24 24" className="h-9 w-9 stroke-primary" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d={s.icon} />
+                    </svg>
+                  </span>
                   <span className="flex items-end justify-between gap-2 font-bold leading-snug">
                     {s.title}
                     <span aria-hidden="true" className="text-primary transition-transform group-hover:translate-x-0.5">→</span>

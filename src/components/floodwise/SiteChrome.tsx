@@ -26,6 +26,7 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav aria-label="Main" className="flex items-center gap-1 text-sm font-semibold">
+          <Link to="/" className="rounded-md px-3 py-2 hover:bg-muted" activeOptions={{ exact: true }} activeProps={{ className: "text-primary" }}>Home</Link>
           <Link to="/about" className="rounded-md px-3 py-2 hover:bg-muted" activeProps={{ className: "text-primary" }}>About</Link>
           <Link to="/privacy" className="rounded-md px-3 py-2 hover:bg-muted" activeProps={{ className: "text-primary" }}>Privacy</Link>
         </nav>
