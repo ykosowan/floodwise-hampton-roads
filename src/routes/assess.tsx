@@ -59,7 +59,7 @@ function Assess() {
     window.scrollTo({ top: 0 });
   }, [step, done]);
 
-  const current = STEPS[step];
+  const current = STEPS[step]!;
   const value = current.key === "dangers" ? answers.dangers : answers[current.key];
   const emergency = isEmergency(answers.dangers);
 
