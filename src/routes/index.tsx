@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Contours } from "@/components/floodwise/SiteChrome";
 import type { Issue } from "@/lib/floodwise/types";
 import heroImg from "@/assets/hero-flood.jpg";
 
