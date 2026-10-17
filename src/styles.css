@@ -151,5 +151,6 @@
 @media print {
   body { background: white; color: black; }
   .card-surface { box-shadow: none; break-inside: avoid; }
+  .print-exact { -webkit-print-color-adjust: exact; print-color-adjust: exact; break-inside: avoid; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; word-break: break-all; }
 }

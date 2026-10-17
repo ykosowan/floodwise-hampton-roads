@@ -1,6 +1,6 @@
 export function EmergencyAlert() {
   return (
-    <div role="alert" className="rounded-2xl border-2 border-destructive bg-danger-soft p-5 sm:p-6">
+    <div role="alert" className="print-exact rounded-2xl border-2 border-destructive bg-danger-soft p-5 sm:p-6">
       <p className="eyebrow text-destructive">⚠ Emergency</p>
       <h2 className="mt-1 text-2xl font-extrabold">Call 911 now</h2>
       <p className="mt-2">
@@ -20,7 +20,7 @@ export function EmergencyAlert() {
 export function PrecautionList({ items }: { items: string[] }) {
   if (!items.length) return null;
   return (
-    <div className="rounded-2xl border-2 border-warning bg-warning-soft p-5 text-warning-foreground" role="status">
+    <div className="print-exact rounded-2xl border-2 border-warning bg-warning-soft p-5 text-warning-foreground" role="status">
       <p className="font-extrabold">⚠ Stay safe</p>
       <ul className="mt-2 space-y-2 text-sm">
         {items.map((p) => (

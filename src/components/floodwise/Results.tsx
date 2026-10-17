@@ -21,6 +21,7 @@ export function Results({ answers, onRestart }: { answers: CompleteAnswers; onRe
 
   return (
     <article className="space-y-6">
+      {r.emergency && <EmergencyAlert />}
       <header className="space-y-4">
         <p className="eyebrow text-accent">Your FloodWise action plan · {date}</p>
         <p className="text-2xl font-extrabold leading-snug sm:text-3xl">{r.summary}</p>
@@ -33,7 +34,6 @@ export function Results({ answers, onRestart }: { answers: CompleteAnswers; onRe
         </div>
       </header>
 
-      {r.emergency && <EmergencyAlert />}
       <PrecautionList items={r.precautions} />
 
       <Section title="What might be happening" note="These are possibilities, not a diagnosis.">
