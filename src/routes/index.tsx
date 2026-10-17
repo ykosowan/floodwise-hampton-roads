@@ -57,16 +57,24 @@ function Home() {
                 <Link
                   to="/assess"
                   search={{ issue: s.issue }}
-                  className="card-surface group flex h-full min-h-36 flex-col justify-between gap-4 p-4 transition-colors hover:border-primary"
+                  className="scenario-card card-surface group flex h-full min-h-36 flex-col justify-between gap-4 p-4"
                 >
-                  <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary transition-colors group-hover:bg-primary/15">
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-primary/70 transition-transform duration-500 ease-out motion-safe:group-hover:scale-x-100"
+                  />
+                  <span className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-secondary transition-all duration-300 ease-out group-hover:bg-primary/15 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:scale-105">
+                    <span
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-primary/45 opacity-0 motion-safe:group-hover:ripple"
+                    />
                     <svg viewBox="0 0 24 24" className="h-9 w-9 stroke-primary" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d={s.icon} />
                     </svg>
                   </span>
                   <span className="flex items-end justify-between gap-2 font-bold leading-snug">
                     {s.title}
-                    <span aria-hidden="true" className="text-primary transition-transform group-hover:translate-x-0.5">→</span>
+                    <span aria-hidden="true" className="text-primary transition-transform duration-300 ease-out motion-safe:group-hover:translate-x-1">→</span>
                   </span>
                 </Link>
               </li>
