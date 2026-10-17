@@ -100,9 +100,13 @@ export function getCauses(a: CompleteAnswers): Cause[] {
   if (a.dangers.includes("sewage") && a.issue === "home") add(C.backup);
   if (a.timing === "tide") add(C.tidal);
   if (a.timing === "no-rain") {
-    if (a.issue === "street" || a.issue === "drain") add(C.groundwater);
-    add(C.leak);
-    if (a.issue === "yard" || a.issue === "home") add(C.groundwater);
+    if (a.issue === "street" || a.issue === "drain") {
+      add(C.groundwater);
+      add(C.leak);
+    } else {
+      add(C.leak);
+      add(C.groundwater);
+    }
   }
   switch (a.issue) {
     case "yard":

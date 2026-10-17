@@ -18,7 +18,7 @@ describe("FloodWise rules", () => {
     const r = assess({ ...base, dangers: ["trapped"] });
     expect(r.emergency).toBe(true);
     expect(r.attention).toBe("hazard");
-    expect(r.actions[0].title).toBe("Call 911 now");
+    expect(r.actions[0]?.title).toBe("Call 911 now");
   });
 
   it("electrical hazard is a potential safety hazard but not an emergency", () => {

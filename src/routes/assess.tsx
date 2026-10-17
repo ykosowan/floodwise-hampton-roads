@@ -17,7 +17,7 @@ import { Results } from "@/components/floodwise/Results";
 
 export const Route = createFileRoute("/assess")({
   validateSearch: (s: Record<string, unknown>): { issue?: Issue } =>
-    ISSUE_SCENARIOS.includes(s.issue as Issue) ? { issue: s.issue as Issue } : {},
+    ISSUE_SCENARIOS.includes(s["issue"] as Issue) ? { issue: s["issue"] as Issue } : {},
   head: () => ({
     meta: [
       { title: "Get your action plan — FloodWise Hampton Roads" },

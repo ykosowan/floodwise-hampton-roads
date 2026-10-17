@@ -5,14 +5,14 @@ export type Severity = "minor" | "spreading" | "entered" | "unsure";
 export type Danger = "electrical" | "rising" | "sewage" | "trapped" | "none" | "unsure";
 
 export interface Answers {
-  city?: City;
-  issue?: Issue;
-  timing?: Timing;
-  severity?: Severity;
+  city?: City | undefined;
+  issue?: Issue | undefined;
+  timing?: Timing | undefined;
+  severity?: Severity | undefined;
   dangers: Danger[];
 }
 
-export type CompleteAnswers = Required<Omit<Answers, "dangers">> & { dangers: Danger[] };
+export interface CompleteAnswers { city: City; issue: Issue; timing: Timing; severity: Severity; dangers: Danger[] }
 
 export type AttentionLevel = "routine" | "prompt" | "hazard";
 
