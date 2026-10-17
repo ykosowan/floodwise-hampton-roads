@@ -30,7 +30,6 @@ function Home() {
       <section className="relative overflow-hidden">
         <img src={heroImg} alt="" width={1600} height={1067} className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/75 to-navy/40" aria-hidden="true" />
-        <Contours className="absolute inset-0 h-full w-full opacity-50" />
         <div className="relative mx-auto max-w-5xl px-4 pb-14 pt-12 sm:px-6 sm:pt-20">
           <p className="eyebrow text-accent">Free community resource</p>
           <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.05] text-navy-foreground sm:text-6xl">
