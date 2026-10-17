@@ -91,6 +91,7 @@ const C = {
   capacity: { title: "Heavy rainfall overwhelming the system", detail: "During intense storms, rain can arrive faster than pipes and ditches are designed to carry it away." },
   ditch: { title: "Overgrown or filled ditch", detail: "Vegetation and built-up sediment (soil and sand) can reduce how much water a roadside ditch can hold." },
   foundation: { title: "Water reaching the foundation", detail: "Surface water collecting next to walls can find its way in through cracks, doors, or low openings." },
+  leakIndoor: { title: "Possible plumbing or appliance leak", detail: "A leaking pipe, water line, water heater, or appliance can cause or add to water inside a home." },
   backup: { title: "Possible sewer backup", detail: "When sewer lines are overloaded or blocked, wastewater can come back up through floor drains or fixtures." },
 } satisfies Record<string, Cause>;
 
@@ -122,7 +123,7 @@ export function getCauses(a: CompleteAnswers): Cause[] {
     case "home":
       add(C.foundation);
       add(C.runoff);
-      if (a.timing !== "no-rain") add(C.leak);
+      if (a.timing !== "no-rain") add(C.leakIndoor);
       break;
     case "drain":
       add(C.debris);

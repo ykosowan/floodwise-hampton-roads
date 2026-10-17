@@ -91,7 +91,13 @@ function Assess() {
 
   const partialPrecautions =
     current.key === "dangers"
-      ? getPrecautions({ city: "chesapeake", issue: "yard", timing: "rain", severity: "minor", dangers: answers.dangers })
+      ? getPrecautions({
+          city: answers.city ?? "chesapeake",
+          issue: answers.issue ?? "yard",
+          timing: answers.timing ?? "unsure",
+          severity: answers.severity ?? "unsure",
+          dangers: answers.dangers,
+        })
       : [];
 
   return (

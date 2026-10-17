@@ -48,4 +48,17 @@ describe("FloodWise rules", () => {
       expect(r.resources.length).toBeGreaterThan(0);
     }
   });
+
+  it("never mentions 'without rain' unless that timing was chosen", () => {
+    for (const i of ISSUE_OPTIONS) for (const t of TIMING_OPTIONS) {
+      if (t.value === "no-rain") continue;
+      const r = assess({ ...base, issue: i.value, timing: t.value });
+      expect(r.causes.some((c) => /without rain/i.test(c.detail))).toBe(false);
+    }
+  });
+
+  it("heavy rain + water in home does not suggest a no-rain leak", () => {
+    const r = assess({ ...base, issue: "home", timing: "rain" });
+    expect(r.causes.map((c) => c.title)).toContain("Possible plumbing or appliance leak");
+  });
 });
