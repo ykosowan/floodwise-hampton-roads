@@ -152,10 +152,12 @@ export function getActions(a: CompleteAnswers): Action[] {
     out.push({ kind: "professional", title: a.timing === "no-rain" ? "Call a licensed plumber" : "Consider a qualified professional", detail: a.timing === "no-rain"
       ? "Water without rain often means a leak. If you know where your main water shut-off is and can reach it safely, consider turning it off."
       : "A water-damage restoration company, plumber, or foundation/waterproofing contractor can find the source and dry things out. Check with your insurance about coverage." });
+    out.push({ kind: "report", title: "Ask the city if outside water is involved", detail: `If water is coming from the street, a ditch, or public drainage, contact ${city} using the resources below. They can help sort out what's public and what's private.` });
   }
 
   if (a.issue === "street") {
     out.push({ kind: "safety", title: "Stay off flooded roads", detail: "Don't drive, walk, or let children play in street floodwater. It can hide open drains, debris, and deep spots." });
+    out.push({ kind: "safety", title: "Move cars to higher ground — only if safe", detail: "If your vehicle is parked where water is rising and you can reach it without entering floodwater, move it. Otherwise, leave it." });
     out.push({ kind: "report", title: `Report the flooding to ${city}`, detail: "Streets and public storm drains are usually maintained by the city. Use the contacts below to let them know." });
   }
 
