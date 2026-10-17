@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Contours } from "@/components/floodwise/SiteChrome";
 import type { Issue } from "@/lib/floodwise/types";
+import heroImg from "@/assets/hero-flood.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,13 +28,15 @@ function Home() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <Contours className="absolute inset-0 h-full w-full" />
+        <img src={heroImg} alt="" width={1600} height={1067} className="absolute inset-0 h-full w-full object-cover" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/75 to-navy/40" aria-hidden="true" />
+        <Contours className="absolute inset-0 h-full w-full opacity-50" />
         <div className="relative mx-auto max-w-5xl px-4 pb-14 pt-12 sm:px-6 sm:pt-20">
           <p className="eyebrow text-accent">Free community resource</p>
-          <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.05] sm:text-6xl">
+          <h1 className="mt-3 max-w-2xl text-4xl font-extrabold leading-[1.05] text-navy-foreground sm:text-6xl">
             Water where it shouldn't be?
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+          <p className="mt-5 max-w-xl text-lg text-navy-foreground/80">
             From flooded streets to standing water in your yard, FloodWise helps Hampton Roads residents understand what might be
             happening and what to do next.
           </p>
@@ -44,10 +47,10 @@ function Home() {
             >
               Get My Action Plan
             </Link>
-            <p className="text-sm text-muted-foreground">Free. Private. No account needed. About 2 minutes.</p>
+            <p className="text-sm text-navy-foreground/75">Free. Private. No account needed. About 2 minutes.</p>
           </div>
 
-          <h2 className="mt-12 text-sm font-bold">Or start with what you're seeing:</h2>
+          <h2 className="mt-12 text-sm font-bold text-navy-foreground">Or start with what you're seeing:</h2>
           <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {SCENARIOS.map((s) => (
               <li key={s.issue}>
