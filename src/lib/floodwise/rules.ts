@@ -48,7 +48,7 @@ export function getAttention(a: CompleteAnswers): { level: AttentionLevel; reaso
   if (a.issue === "home") {
     return { level: "prompt", reason: "Water inside a home can cause damage quickly." };
   }
-  if (a.timing === "no-rain" && (a.issue === "yard" || a.issue === "home")) {
+  if (a.timing === "no-rain" && a.issue === "yard") {
     return { level: "prompt", reason: "Water without rain can point to a leak that keeps running." };
   }
   if (a.severity === "unsure" || d.includes("unsure")) {
